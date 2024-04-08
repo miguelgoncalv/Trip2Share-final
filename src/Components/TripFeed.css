@@ -22,22 +22,21 @@
   letter-spacing: 2px; 
 }
 
-/* Add this new class for delete button style */
 .delete-comment-button {
   padding: 5px 10px;
-  background-color: #ff4d4f; /* Red color for delete button */
+  background-color: #ff4d4f; 
   color: white;
   font-weight: normal;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 20px;
-  margin-left: 10px; /* Add some space between the comment and delete button */
-  font-size: 0.8rem; /* Smaller text for delete button */
+  margin-left: 10px; 
+  font-size: 0.8rem; 
 }
 
 .delete-comment-button:hover {
-  background-color: #ff7875; /* Lighter red on hover */
+  background-color: #ff7875; 
 }
 
 

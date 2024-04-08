@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import './SignUp.css';
-import { useNavigate } from 'react-router-dom'; // useHistory is not used, so we only keep useNavigate
+import { useNavigate } from 'react-router-dom'; 
 
 function SignUp() {
   const [name, setName] = useState('');
@@ -9,7 +9,7 @@ function SignUp() {
   const [password, setPassword] = useState('');
 
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Use navigate for redirection
+  const navigate = useNavigate(); // Use navigate function for redirection...
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -17,16 +17,15 @@ function SignUp() {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(userCredential.user, { displayName: name });
-      // Redirect the user after successful sign-up
+      // Redirect the user after successful sign-up luv
       navigate('/userprofile');
     } catch (error) {
       setError(error.message);
     }
   }
 
-  // Removed the isSignedUp check since we are redirecting immediately after sign up
-
   return (
+    <div className='signup-container-background'>
     <div className="signup-container">
       <div className="signup-form">
         <h1>Sign Up</h1>
@@ -57,9 +56,11 @@ function SignUp() {
           <p>By signing up, you agree to our Terms and Conditions.</p>
           <button type="submit">Sign Up</button>
         </form>
+        </div>
       </div>
     </div>
   );
+
 }
 
 export default SignUp;

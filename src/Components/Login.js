@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
@@ -17,9 +17,25 @@ function Login() {
       // User successfully logged in, redirect to HomePage...not implemented yet
       navigate('/homepage');
     } catch (error) {
-      setError(error.message); // Displaying error message
+      setError(error.message); 
     }
   };
+
+  const handleForgotPassword = async () => {
+    if (!email) {
+      setError('Please enter your email address to reset your password.');
+      return;
+    }
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert('Password reset email sent! Please check your inbox.');
+      })
+      .catch((error) => {
+        setError(error.message); // Display error message
+      });
+  };
+
 
   return (
     <div className="login-background">
@@ -45,7 +61,16 @@ function Login() {
         />
         <button type="submit">Login</button>
       </form>
+      <p>Forgot you password? We can fix that </p>
+
+      <button onClick={handleForgotPassword} className="forgot-password">
+          Reset Password
+        </button>
+
       <p>Don’t have an account yet?  <Link to="/signup">SignUp</Link> and start sharing your travel stories with the world.</p>
+
+     
+        
     </div>
     </div>
   );

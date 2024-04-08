@@ -23,23 +23,23 @@ function TripFeed() {
                 // Attempt to fetch the user's profile picture
                 const storage = getStorage();
                 try {
-                    const profilePicPath = `profiles/${tripData.userId}/profilePic`; // Adjust the path as per your storage structure
+                    const profilePicPath = `profiles/${tripData.userId}/profilePic`; 
                     const profilePicRef = ref(storage, profilePicPath);
                     tripData.userPhotoURL = await getDownloadURL(profilePicRef);
                 } catch (error) {
                     console.error("Failed to load user photo", error);
-                    tripData.userPhotoURL = './Images/default-avatar.png'; // Fallback image
+                    tripData.userPhotoURL = './Images/default-avatar.png'; 
                 }
                 tripsData.push(tripData);
             }
             setTrips(tripsData);
         });
 
-        return () => unsubscribeTrips(); // Cleanup on unmount
+        return () => unsubscribeTrips(); 
     }, []);
 
     useEffect(() => {
-        // Fetch comments for each trip and listen for real-time updates
+        // Reach all the  comments for each trip and listen for real-time updates...
         trips.forEach((trip) => {
             const unsubscribe = onSnapshot(query(collection(db, "comments"), where("tripId", "==", trip.id)), (snapshot) => {
                 const commentsData = snapshot.docs.map(doc => ({
@@ -52,12 +52,11 @@ function TripFeed() {
                 }));
             });
 
-            // Cleanup function for subscriptions
             return () => unsubscribe();
         });
     }, [trips]);
 
-    // Function to handle adding a new comment
+
     const handleAddComment = async (tripId) => {
         if (!newCommentText[tripId] || !currentUser) return;
 
@@ -70,7 +69,7 @@ function TripFeed() {
         setNewCommentText(prev => ({ ...prev, [tripId]: '' }));
     };
 
-    // Function to handle sending a private message
+
     const handlePrivateMessage = async (tripUserId) => {
         if (!currentUser) {
             console.log("User not logged in");
@@ -85,13 +84,13 @@ function TripFeed() {
           }
         };
 
-    // Function to handle new comment text change
+
     const handleNewCommentChange = (tripId, text) => {
         setNewCommentText({ ...newCommentText, [tripId]: text });
     };
 
     const handleDeleteComment = async (tripId, commentId) => {
-      // Check if a user is logged in
+      // Check if a user is logged in or not...
       if (currentUser) {
         try {
           await deleteDoc(doc(db, "comments", commentId));
@@ -105,7 +104,6 @@ function TripFeed() {
       }
     };
 
-    // Helper function to fetch user details
 const fetchUserDetails = async (userId) => {
     if (!userId) return { userName: 'Anonymous', userPhotoURL: './Images/default-avatar.png' };
   
@@ -125,7 +123,7 @@ const fetchUserDetails = async (userId) => {
   };
   
   useEffect(() => {
-    // Fetch comments for each trip and listen for real-time updates
+
     const unsubscribeComments = trips.map(trip => {
       return onSnapshot(query(collection(db, "comments"), where("tripId", "==", trip.id)), async (snapshot) => {
         const commentsDataPromises = snapshot.docs.map(async (doc) => {
@@ -146,7 +144,7 @@ const fetchUserDetails = async (userId) => {
   }, [trips]);
   
   const findOrCreateChat = async (currentUserId, otherUserId) => {
-    // Check if a chat between the two users already exists
+    // Check if any chat between the two users already exists
     const chatsRef = collection(db, "chats");
     const q = query(chatsRef, where("userIds", "array-contains", currentUserId));
   
@@ -154,10 +152,10 @@ const fetchUserDetails = async (userId) => {
     let chatDoc = querySnapshot.docs.find(doc => doc.data().userIds.includes(otherUserId));
   
     if (chatDoc) {
-      // Chat already exists
+      // Chat already exists...
       return chatDoc.id;
     } else {
-      // Create a new chat document with both user IDs
+      // Create a new chat document with both user IDs for a new chat
       const chatData = {
         userIds: [currentUserId, otherUserId],
         createdAt: serverTimestamp(),
