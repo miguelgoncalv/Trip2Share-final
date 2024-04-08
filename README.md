@@ -8,7 +8,7 @@ The project can be access by an online host with the URL: https://illustrious-pi
 
 Solo travel doesn't have to be lonely. Trip2Share aims to bring together individuals who share a passion for exploring the world. Whether you're planning a quiet getaway or an action-packed adventure, our platform provides the tools to connect with fellow travelers, share experiences, and create lasting memories. Features include trip planning assistance, user profiles, real-time chat functionality, and a shared space for travel tips and stories.
 
-## **Getting Started
+## **Getting Started**
 
 ## **Dependencies**
 React (Created with Create React App)
