@@ -1,16 +1,16 @@
 
 # **Trip2Share** 
-### Trip@Share is a dynamic platform designed to connect solo travelers from around the globe. Our application empowers individuals seeking adventure to plan their journeys collaboratively, discover companions with similar travel interests, and engage in meaningful conversations with other users. By fostering a community of like-minded explorers, Trip2Share makes solo travel safer, more accessible, and more enjoyable.
+Trip@Share is a dynamic platform designed to connect solo travelers from around the globe. Our application empowers individuals seeking adventure to plan their journeys collaboratively, discover companions with similar travel interests, and engage in meaningful conversations with other users. By fostering a community of like-minded explorers, Trip2Share makes solo travel safer, more accessible, and more enjoyable.
 
 The project can be access by an online host with the URL: https://illustrious-pika-af9a2e.netlify.app
 
-Description
+## **Description**
 
 Solo travel doesn't have to be lonely. Trip2Share aims to bring together individuals who share a passion for exploring the world. Whether you're planning a quiet getaway or an action-packed adventure, our platform provides the tools to connect with fellow travelers, share experiences, and create lasting memories. Features include trip planning assistance, user profiles, real-time chat functionality, and a shared space for travel tips and stories.
 
-Getting Started
+## **Getting Started
 
-Dependencies
+## **Dependencies**
 React (Created with Create React App)
 Node.js and npm (Node package manager)
 Firebase for authentication, database, and storage
@@ -41,18 +41,11 @@ Fill out your profile with travel preferences, destinations of interest, and ava
 Use the trip planning feature to create a new travel plan or join an existing one.
 Connect with other travelers using our real-time chat feature.
 Share and receive travel tips, recommendations, and experiences.
-Contributing
-Contributions to Trip2Share are welcome! To contribute:
 
-Fork the repository.
-Create a new branch for your feature (git checkout -b feature/AmazingFeature).
-Commit your changes (git commit -am 'Add some AmazingFeature').
-Push to the branch (git push origin feature/AmazingFeature).
-Open a pull request.
+
+
 Authors
 Miguel Goncalves - miguelicm34@gmail.com
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 Acknowledgments
 Thanks to all the solo travelers who shared their stories and inspired this project.
