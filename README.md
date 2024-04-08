@@ -1,7 +1,7 @@
 
 Trip2Share is a dynamic platform designed to connect solo travelers from around the globe. Our application empowers individuals seeking adventure to plan their journeys collaboratively, discover companions with similar travel interests, and engage in meaningful conversations with other users. By fostering a community of like-minded explorers, Trip2Share makes solo travel safer, more accessible, and more enjoyable.
 
-
+The project can be access by an online host with the URL: https://illustrious-pika-af9a2e.netlify.app
 
 Description
 
