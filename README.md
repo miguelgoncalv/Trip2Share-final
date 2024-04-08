@@ -45,7 +45,7 @@ Commit your changes (git commit -am 'Add some AmazingFeature').
 Push to the branch (git push origin feature/AmazingFeature).
 Open a pull request.
 Authors
-Your Name - your.email@example.com
+Miguel Goncalves - miguelicm34@gmail.com
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
