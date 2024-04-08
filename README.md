@@ -1,10 +1,14 @@
-Trip2Share
+
 Trip2Share is a dynamic platform designed to connect solo travelers from around the globe. Our application empowers individuals seeking adventure to plan their journeys collaboratively, discover companions with similar travel interests, and engage in meaningful conversations with other users. By fostering a community of like-minded explorers, Trip2Share makes solo travel safer, more accessible, and more enjoyable.
 
+
+
 Description
+
 Solo travel doesn't have to be lonely. Trip2Share aims to bring together individuals who share a passion for exploring the world. Whether you're planning a quiet getaway or an action-packed adventure, our platform provides the tools to connect with fellow travelers, share experiences, and create lasting memories. Features include trip planning assistance, user profiles, real-time chat functionality, and a shared space for travel tips and stories.
 
 Getting Started
+
 Dependencies
 React (Created with Create React App)
 Node.js and npm (Node package manager)
