@@ -1,0 +1,180 @@
+.trip-feed-container {
+  max-width: 950px;
+  margin: 2% auto;
+  padding: 30px;
+  background: linear-gradient(115deg, #f9f9fb 0%, #38B6FF 370%);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.trip-feed-title {
+  text-align: center;
+  color: #3e2ca8;
+  font-size: 28px;
+  font-weight: bold;
+  font: Playfer Display, serif;
+  margin-bottom: 20px;
+  font-family: "League Gothic", sans-serif;
+  font-weight: 400;
+  font-style: bold; 
+  font-size: 30px;
+  font-variation-settings: "wdth" 900;
+  letter-spacing: 2px; 
+}
+
+/* Add this new class for delete button style */
+.delete-comment-button {
+  padding: 5px 10px;
+  background-color: #ff4d4f; /* Red color for delete button */
+  color: white;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 20px;
+  margin-left: 10px; /* Add some space between the comment and delete button */
+  font-size: 0.8rem; /* Smaller text for delete button */
+}
+
+.delete-comment-button:hover {
+  background-color: #ff7875; /* Lighter red on hover */
+}
+
+
+.trip-entry {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.comments-section {
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid #fefcfc;
+  background-color: gradient(115deg, #f9f9fb 0%, #38B6FF 370%);
+}
+
+.trip-entry {
+  margin-bottom: 15px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.trip-header, .trip-name, .trip-destination, .trip-description, .trip-date, .comment {
+  font: Playfer Display, serif;
+}
+
+.trip-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.trip-user-photo { 
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.comment-user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.trip-name {
+  color: #5a5a5a;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.trip-destination {
+  color: #030405;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.trip-description {
+  color: #333;
+  line-height: 1.5;
+}
+
+.trip-date {
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.comments-section {
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid #fefcfc;
+  background-color: gradient(115deg, #f9f9fb 0%, #38B6FF 370%);
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.comments-section p {
+  margin-left: 10px;
+  color: #040101;
+  font-size: 14px;
+  border-radius: 15px;
+  
+}
+
+.comments-section input {
+  width: 35%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid #1a0d0d;
+  border-radius: 20px;
+  font: Playfer Display, serif;
+}
+
+.comments-section button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 20px;
+  border: 1px solid #010203;
+  margin-left: 20px;
+  font: Playfer Display, serif;
+  margin-bottom: 20px;
+  font-family: "League Gothic", sans-serif;
+  font-weight: 400;
+  font-style: bold; 
+  font-size: 12px;
+  font-variation-settings: "wdth" 900;
+  letter-spacing: 1px; 
+}
+
+.comments-section button:hover {
+  background-color: #334456;
+  
+
+}
+
+@media (max-width: 768px) {
+  .trip-feed-container, .trip-entry {
+    padding: 15px;
+  }
+
+  .trip-feed-title {
+    font-size: 24px;
+  }
+}

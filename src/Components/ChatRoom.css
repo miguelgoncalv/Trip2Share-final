@@ -1,0 +1,117 @@
+/* Chat container styles */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    background-image: url('/public/Images/Login.png');
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.chat-header {
+    
+    color: rgb(10, 4, 4); /* Choose a text color */
+    padding: 10px; /* Add padding */
+    text-align: left; /* Center the text */
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    font: optional;
+    font-weight: bold;
+  }
+  
+
+/* Messages list styles */
+.messages-list {
+    list-style-type: none;
+    padding: 15px;
+    margin: 0;
+    overflow-y: auto;
+    height: calc(100% - 48px); /* Adjust based on chat form height */
+}
+
+.message {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: flex-end;
+    border-radius: 20px;
+    
+}
+
+.sent .message-content, .received .message-content {
+    max-width: calc(100% - 50px); /* Consider avatar width */
+    padding: 8px 16px;
+    border-radius: 20px;
+    word-break: break-word;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    font-size: 14px;
+}
+
+.sent {
+    justify-content: flex-end;
+}
+
+.received {
+    justify-content: flex-start;
+}
+
+.sent .message-content {
+    background-color: #007bff;
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.received .message-content {
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 0;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+/* Chat form styles */
+.chat-form {
+    display: flex;
+    border-top: 1px solid #e6e6e6;
+    padding: 10px;
+}
+
+.chat-form input, .chat-form button {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+}
+
+.chat-form input {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.chat-form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.chat-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styles */
+.error {
+    color: #d32f2f;
+    padding: 10px;
+    text-align: center;
+    background-color: #fddede;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
