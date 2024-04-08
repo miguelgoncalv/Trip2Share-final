@@ -39,7 +39,7 @@ function ChatList() {
           : { text: "No messages yet.", timestamp: null };
     
         const otherUserId = docSnapshot.data().userIds.find(uid => uid !== user.uid);
-        const otherUserDocRef = doc(db, "users", otherUserId); // Ensure 'doc' is called correctly
+        const otherUserDocRef = doc(db, "users", otherUserId);
         const otherUserSnap = await getDoc(otherUserDocRef);
         const otherUserData = otherUserSnap.exists() ? otherUserSnap.data() : {};
     
