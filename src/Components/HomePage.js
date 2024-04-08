@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../Contexts/AuthContext';
 import TripPlanner from './TripPlanner';
 import TripFeed from './TripFeed';
-import PlacesRecommended from './PlacesRecommended'; // Make sure this component is created
+import PlacesRecommended from './PlacesRecommended'; 
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import './HomePage.css';
@@ -14,7 +14,7 @@ function HomePage() {
     const [userProfile, setUserProfile] = useState(null);
 
     const redirectToUserProfile = () => {
-        navigate('/userprofile'); // Adjust this path as needed
+        navigate('/userprofile'); 
     };
     
     useEffect(() => {

@@ -5,7 +5,7 @@ function Home() {
     <div>
       <h1>Welcome to Trip 2Share</h1>
       <p>Connect with travelers and share amazing trips!</p>
-      {/* Other content */}
+     
     </div>
   );
 }

@@ -1,26 +1,24 @@
-// src/components/PlacesRecommended.js
 import React from 'react';
 import './PlacesRecommended.css'; 
 
 function PlacesRecommended() {
-  // Placeholder data or fetch the places from an API or database
   const places = [
     { 
       name: 'Capri Island, Italy 🇮🇹', 
       description: 'A picturesque island with rugged landscapes, azure waters, and historic charm.',
-      imagePath: '/Images/capri.png' // Update the path as needed
+      imagePath: '/Images/capri.png' 
     },
     { 
       name: 'Mount Fuji, Japan 🇯🇵', 
       description: 'Land of contrasts, blending ancient traditions with cutting-edge modernity.',
-      imagePath: '/Images/japan.png' // Update the path as needed
+      imagePath: '/Images/japan.png'
     },
     { 
       name: 'São Paulo, Brazil 🇧🇷', 
       description: 'Brazil s bustling metropolis, rich in culture and diversity.',
-      imagePath: '/Images/sao.png' // Update the path as needed
-    },
+      imagePath: '/Images/sao.png' 
     // ...more places
+    }
   ];
 
   return (

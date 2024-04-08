@@ -17,7 +17,7 @@ function ProfileSetup() {
   });
   const [imageUpload, setImageUpload] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
@@ -55,7 +55,7 @@ function ProfileSetup() {
       }, { merge: true });
 
       alert("Profile updated successfully!");
-      navigate('/homepage'); // Use navigate function to redirect
+      navigate('/homepage'); 
     } catch (error) {
       console.error("Error updating profile:", error);
       alert("Error updating profile.");
@@ -76,7 +76,6 @@ function ProfileSetup() {
           placeholder="Display Name"
           required
         />
-        {/* Replace textareas with input for single-line text fields */}
         <input
           type="text"
           name="age"

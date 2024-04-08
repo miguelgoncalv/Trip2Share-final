@@ -1,9 +1,9 @@
-/* Container styles */
+
 .container {
     display: flex;
-    justify-content: flex-end; /* Aligns .trip-planner to the right */
-    padding: 10px; /* Adds some padding around the container */
-    margin-right: 0px; /* Adds some margin to the right of the container */
+    justify-content: flex-end; 
+    padding: 0px; 
+    margin-right: 0px; 
     background-image: url('/public/Images/Find5.png');
 }
 
@@ -17,32 +17,41 @@
 }
 
 .trip-planner h2 {
-    color: #333;
     text-align: center;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    color: #3e2ca8;
+    font-size: 28px;
+    font-weight: bold;
+    font: Playfer Display, serif;
+    margin-bottom: 20px;
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+    font-style: bold; 
+    font-size: 30px;
+    font-variation-settings: "wdth" 900;
+    letter-spacing: 2px; 
 }
 
-/* Input and Textarea styles */
+
 .trip-planner input[type="text"],
 .trip-planner input[type="date"],
 .trip-planner textarea {
     width: 100%;
-    padding: 1px 8px;
+    padding: 5px 8px;
     margin: 5px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 14px;
     box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Textarea specific styles */
+
 .trip-planner textarea {
-    height: 30px; /* Adjust height as needed */
-    resize: vertical; /* Allows the user to resize the textarea vertically */
+    height: 30px; 
+    resize: vertical; 
 }
 
-/* Button styles */
+
 .trip-planner button {
     width: 20%;
     float: right;

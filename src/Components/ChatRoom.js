@@ -10,42 +10,37 @@ function ChatRoom() {
   const [newMessage, setNewMessage] = useState('');
   const [error, setError] = useState('');
   const [receiverUserName, setReceiverUserName] = useState('');
+  const [receiverUserPhoto, setReceiverUserPhoto] = useState('/user.png'); 
   const [user] = useAuthState(auth);
   const { chatId } = useParams();
-  const messagesEndRef = useRef(null);
   const messagesRef = collection(db, "chats", chatId, "messages");
   const q = query(messagesRef, orderBy("timestamp", "asc"));
   const [messages] = useCollectionData(q);
 
   useEffect(() => {
-    // Scroll to the last message
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-
-    // Function to fetch the receiver's user name
-    const fetchReceiverUserName = async () => {
-      // You would replace this with your Firestore query to get the receiver's user name
+    const fetchReceiverUserNameAndPhoto = async () => {
       const chatRef = doc(db, 'chats', chatId);
       const chatSnap = await getDoc(chatRef);
-      
+
       if (chatSnap.exists()) {
         const chatData = chatSnap.data();
-        // You need to know how to identify the receiver's user ID here to fetch their data
-        // This is an example, replace it with your actual field names and logic
         const otherUserId = chatData.userIds.find(uid => uid !== user?.uid);
         if (otherUserId) {
           const userRef = doc(db, 'users', otherUserId);
           const userSnap = await getDoc(userRef);
           if (userSnap.exists()) {
-            setReceiverUserName(userSnap.data().displayName || 'Anonymous');
+            const userData = userSnap.data();
+            setReceiverUserName(userData.displayName || 'Anonymous');
+            setReceiverUserPhoto(userData.photoURL || '/user.png'); 
           }
         }
       }
     };
 
     if (chatId) {
-      fetchReceiverUserName();
+      fetchReceiverUserNameAndPhoto();
     }
-  }, [chatId, messages, user?.uid]);
+  }, [chatId, user?.uid]);
   
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -62,8 +57,8 @@ function ChatRoom() {
       await addDoc(messagesRef, {
         text: newMessage,
         userId: user.uid,
-        userName: user.displayName || 'Anonymous', // Fallback if displayName is not set
-        userPhotoURL: user.photoURL || '/default-avatar.png', // Fallback if photoURL is not set
+        userName: user.displayName || 'Anonymous', 
+        userPhotoURL: user.photoURL || '/default-avatar.png', 
         timestamp: serverTimestamp(),
       });
       setNewMessage('');
@@ -74,28 +69,21 @@ function ChatRoom() {
 
   return (
     <div className="chat-container">
-      {/* Display the receiver's user name */}
-      <div className="chat-header">{receiverUserName}</div>
       {error && <p className="error">{error}</p>}
+      <div className="chat-header">
+        <img src={receiverUserPhoto} alt="Receiver Avatar" className="receiver-avatar" />
+        <span>{receiverUserName}</span>
+      </div>
       <ul className="messages-list">
-         {messages?.map((message) => {
-          const messageClass = message.userId === user?.uid ? 'sent' : 'received';
-          return (
-            <li key={message.id} className={`message ${messageClass}`}>
-              {/* Removed the avatar image rendering */}
-              <div className="message-content">
-                <div className="message-text">{message.text}</div>
-                {/* Optionally, display the sender's name for received messages */}
-                {messageClass === 'received' && (
-                  <div className="message-sender">{message.userName}</div>
-                )}
-              </div>
-            </li>
-          );
-        })}
-        <div ref={messagesEndRef} />
+        {messages && messages.map((message) => (
+          <li key={message.id} className={`message ${message.userId === user?.uid ? 'sent' : 'received'}`}>
+            <div className="message-content">
+              <div className="message-text">{message.text}</div>
+              
+            </div>
+          </li>
+        ))}
       </ul>
-
       <form onSubmit={sendMessage} className="chat-form">
         <input
           value={newMessage}
@@ -107,6 +95,6 @@ function ChatRoom() {
       </form>
     </div>
   );
-}
+}  
 
 export default ChatRoom;

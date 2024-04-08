@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth'; // Import getAuth to access authentication
+import { getAuth } from 'firebase/auth'; 
 import { db } from '../firebase-config'; 
 import './TripPlanner.css'; 
 
@@ -14,15 +14,14 @@ function TripPlanner() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const auth = getAuth(); // Initialize Firebase Auth
-        const user = auth.currentUser; // Get the currently signed-in user
+        const auth = getAuth(); 
+        const user = auth.currentUser; 
 
         if (user) {
             try {
-                // Add the userId to the trip object before saving
                 await addDoc(collection(db, "trips"), {
                     ...trip,
-                    userId: user.uid, // Add the current user's UID to the trip document
+                    userId: user.uid, 
                 });
                 alert("You have a new trip planned!");
                 setTrip({ name: '', destination: '', date: '', description: '' });
@@ -31,8 +30,7 @@ function TripPlanner() {
                 alert("Error planning trip.");
             }
         } else {
-            // If no user is signed in, handle accordingly
-            alert("You must be signed in to share a trip.");
+            alert("You must be signed in to share a trip luv.");
         }
     };
 

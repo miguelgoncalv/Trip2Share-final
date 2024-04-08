@@ -144,7 +144,7 @@ const fetchUserDetails = async (userId) => {
   }, [trips]);
   
   const findOrCreateChat = async (currentUserId, otherUserId) => {
-    // Check if any chat between the two users already exists
+   
     const chatsRef = collection(db, "chats");
     const q = query(chatsRef, where("userIds", "array-contains", currentUserId));
   
@@ -161,7 +161,7 @@ const fetchUserDetails = async (userId) => {
         createdAt: serverTimestamp(),
       };
       const docRef = await addDoc(chatsRef, chatData);
-      return docRef.id; // New chat document ID
+      return docRef.id; 
     }
   };
   
@@ -191,7 +191,7 @@ const fetchUserDetails = async (userId) => {
                     {currentUser && currentUser.uid === comment.userId && (
                       <button
                         onClick={() => handleDeleteComment(trip.id, comment.id)}
-                        className="delete-comment-button" // Apply the new class here
+                        className="delete-comment-button" 
                       >
                         Delete
                       </button>

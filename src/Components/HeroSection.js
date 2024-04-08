@@ -43,7 +43,7 @@ const headingStyle = {
         <h1 style={headingStyle}>Explore </h1>
       <div>
         <button style={buttonStyle} onClick={() => navigate('/SignUp')}>Sign Up</button>
-        <button style={buttonStyle} onClick={() => navigate('/Login')}>Find an Adventure</button>
+        <button style={buttonStyle} onClick={() => navigate('/homepage')}>Find an Adventure</button>
       </div>
     </div>
   );

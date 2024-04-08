@@ -7,13 +7,13 @@ function NavBar() {
   const [faded, setFaded] = useState(false);
   const [user, setUser] = useState(null);
 
-  // Correct placement of handleScroll function inside NavBar
+  
   const handleScroll = () => {
     const isFaded = window.scrollY > 50;
     setFaded(isFaded);
   };
 
-  // The useEffect hook is now correctly inside the NavBar function
+
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -22,14 +22,14 @@ function NavBar() {
 
     window.addEventListener("scroll", handleScroll);
     
-    // Cleanup function correctly placed inside the useEffect hook
+   
     return () => {
       window.removeEventListener("scroll", handleScroll);
       unsubscribe();
     };
   }, []);
 
-  // The logout function is now correctly inside the NavBar function
+
   const logout = async () => {
     const auth = getAuth();
     try {
@@ -40,7 +40,6 @@ function NavBar() {
     }
   };
 
-  // The return statement is now correctly inside the NavBar function
   return (
     <nav className={`navbar ${faded ? "faded" : ""}`}>
       <div className="logo">

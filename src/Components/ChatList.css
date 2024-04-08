@@ -24,7 +24,7 @@
   font-family: var(--chat-font-family);
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Softer shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   overflow: hidden; 
   margin: 24px auto; 
   width: 100%;
@@ -33,71 +33,71 @@
   margin-top: 70px ;
 }
 
-/* Styling for individual chat items */
+
 .chat-item {
     display: flex;
     align-items: center;
     padding: var(--chat-spacing);
     border-bottom: 1px solid var(--chat-border);
-    transition: background-color 0.2s; /* Smooth transition for hover effect */
+    transition: background-color 0.2s; 
     color: var(--chat-text-primary);
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Hover effect for chat items */
+
 .chat-item:hover {
-    background-color: var(--chat-item-hover); /* Refer to the root variable */
+    background-color: var(--chat-item-hover); 
 }
 
-/* Avatar within chat items */
+
 .chat-item-avatar {
-    width: var(--chat-avatar-size); /* Refer to the root variable */
+    width: var(--chat-avatar-size); 
     height: var(--chat-avatar-size);
-    border-radius: 50%; /* Circular avatars */
+    border-radius: 50%; 
     object-fit: cover;
     margin-right: var(--chat-spacing);
 }
 
-/* Details within chat items, like title and last message */
+
 .chat-item-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Styling for chat item titles and messages */
+
 .chat-item-title {
     font-weight: bold;
-    margin: 4px 0; /* Adjusted margins */
+    margin: 4px 0; 
 }
 
 .chat-item-last-message {
     color: var(--chat-text-secondary);
-    margin: 4px 0; /* Adjusted margins */
+    margin: 4px 0; 
 }
 
 .chat-item-timestamp {
     font-size: 0.75rem;
     color: var(--chat-text-secondary);
-    margin: 4px 0; /* Adjusted margins */
+    margin: 4px 0; 
 }
 
-/* Error message styling */
+
 .chat-list-error {
     color: #d32f2f;
     text-align: center;
     padding: 10px;
 }
 
-/* Responsive styling for smaller screens */
+
 @media (max-width: 768px) {
     .chat-list-container {
         padding: 15px;
     }
 
     .chat-item-avatar {
-        width: 50px; /* Slightly smaller avatars on smaller screens */
+        width: 50px; 
         height: 50px;
     }
 }

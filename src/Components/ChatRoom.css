@@ -1,117 +1,123 @@
-/* Chat container styles */
+:root {
+    --chat-primary-color: #007bff;
+    --chat-secondary-color: #f8f9fa;
+    --chat-error-color: #d32f2f;
+    --chat-text-color: #333;
+    --chat-input-bg-color: #fff;
+    --chat-input-border-color: #ccc;
+    --chat-avatar-size: 40px;
+}
+
 .chat-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 600px;
-    border: 1px solid #e6e6e6;
-    border-radius: 8px;
-    background-image: url('/public/Images/Login.png');
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 80vh; 
+    max-width: 800px; 
+    margin: auto; 
+    border: 1px solid var(--chat-input-border-color);
+    border-radius: 10px;
+    background: var(--chat-secondary-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     overflow: hidden;
-    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .chat-header {
-    
-    color: rgb(10, 4, 4); /* Choose a text color */
-    padding: 10px; /* Add padding */
-    text-align: left; /* Center the text */
-    font-size: 1.5rem; /* Adjust the font size as needed */
-    font: optional;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(190deg, #525151, #007bff, #599fe9, #333);
+    color: white;
+    padding: 12px;
+    border-bottom: 1px solid var(--chat-input-border-color);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
     font-weight: bold;
-  }
-  
+}
 
-/* Messages list styles */
+.receiver-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 10%;
+    margin-right: 15px;
+    object-fit: cover; 
+}
+
 .messages-list {
-    list-style-type: none;
-    padding: 15px;
-    margin: 0;
+    padding: 10px;
     overflow-y: auto;
-    height: calc(100% - 48px); /* Adjust based on chat form height */
+    flex-grow: 1;
 }
 
 .message {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 12px;
-    align-items: flex-end;
-    border-radius: 20px;
-    
-}
-
-.sent .message-content, .received .message-content {
-    max-width: calc(100% - 50px); /* Consider avatar width */
-    padding: 8px 16px;
-    border-radius: 20px;
-    word-break: break-word;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.9);
-    font-size: 14px;
 }
 
 .sent {
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.received {
-    justify-content: flex-start;
+.message-content {
+    max-width: 80%; 
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
 .sent .message-content {
-    background-color: #007bff;
+    background-color: var(--chat-primary-color);
     color: white;
     border-bottom-right-radius: 0;
 }
 
 .received .message-content {
-    background-color: white;
-    color: black;
+    background-color: var(--chat-input-bg-color);
+    color: var(--chat-text-color);
     border-bottom-left-radius: 0;
 }
 
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 10px;
-}
-
-/* Chat form styles */
 .chat-form {
     display: flex;
-    border-top: 1px solid #e6e6e6;
     padding: 10px;
-}
-
-.chat-form input, .chat-form button {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 10px;
-    outline: none;
+    background: var(--chat-secondary-color);
+    border-top: 1px solid var(--chat-input-border-color);
 }
 
 .chat-form input {
-    flex-grow: 1;
-    margin-right: 10px;
+    flex: 1;
+    padding: 10px;
+    margin-right: 8px;
+    border: 1px solid var(--chat-input-border-color);
+    border-radius: 20px;
+    background: var(--chat-input-bg-color);
 }
 
 .chat-form button {
-    background-color: #007bff;
+    padding: 10px 20px;
+    background-color: var(--chat-primary-color);
     color: white;
-    cursor: pointer;
     border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .chat-form button:hover {
-    background-color: #0056b3;
+    background-color: darken(var(--chat-primary-color), 10%);
 }
 
-/* Error message styles */
 .error {
-    color: #d32f2f;
     padding: 10px;
+    background-color: var(--chat-error-color);
+    color: white;
     text-align: center;
-    background-color: #fddede;
-    margin-bottom: 10px;
     border-radius: 8px;
+    margin-bottom: 8px;
 }
